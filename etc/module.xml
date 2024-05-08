@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Yashh Team
+ * @copyright Copyright (c) 2018 Yashh yashhcode@gmail.com
+ * @package Yashh_InvisibleCaptcha
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Yashh_InvisibleCaptcha" setup_version="1.0.0" />
+</config>

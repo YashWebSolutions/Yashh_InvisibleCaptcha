@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Yashh Team
+ * @copyright Copyright (c) 2018 Yashh yashhcode@gmail.com
+ * @package Yashh_InvisibleCaptcha
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="YashhCustomForm" type="\Yashh\InvisibleCaptcha\Model\Config\Source\Extension">
+        <arguments>
+            <argument name="moduleName" xsi:type="string">Yashh_Customform</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="YashhFaq" type="\Yashh\InvisibleCaptcha\Model\Config\Source\Extension">
+        <arguments>
+            <argument name="moduleName" xsi:type="string">Yashh_Faq</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="YashhExtensionsData" type="Magento\Framework\DataObject">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="customForm" xsi:type="array">
+                    <item name="name" xsi:type="string">Yashh_Customform</item>
+                    <item name="url" xsi:type="string">amasty_customform/form/submit</item>
+                    <item name="selector" xsi:type="string">form[action*="amasty_customform/form/submit"]</item>
+                </item>
+                <item name="Faq" xsi:type="array">
+                    <item name="name" xsi:type="string">Yashh_Faq</item>
+                    <item name="url" xsi:type="string">faq/index/save</item>
+                    <item name="selector" xsi:type="string">form[action*="faq/index/save"]</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Yashh\InvisibleCaptcha\Model\Captcha">
+        <arguments>
+            <argument name="extensionsData" xsi:type="object">YashhExtensionsData</argument>
+        </arguments>
+    </type>
+</config>
